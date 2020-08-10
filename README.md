@@ -1,5 +1,5 @@
 # Docker로 로컬 개발환경 한번에 설정
-
+기본용어 및 개념: 감사합니다ㅠㅜ[욱's노트블로그](https://opennote46.tistory.com/207)
 ## 이미지와 컨테이너 사용방법(기본)
 
 ### docker-compose.yml
@@ -195,6 +195,8 @@ networks:
 
 1. nginx-proxy 컨테이너 실행
 ```
+
+$ docker 
 $ docker pull jwilder/nginx-proxy:latest
 $ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/usr/local/bin/docker-machine &&
@@ -220,7 +222,12 @@ $ sudo docker run -i -t --name proxy-vue jwilder/nginx-proxy
 * 앱컨테이너와 데이터 베이스 컨테이너의 실행 순서
 
 ### 해결책1: 도커파일 -> docker build -> run
+Docker File이란 Docker Image를 만들기 위한 설정 파일입니다. 여러가지 명령어를 토대로 Docker File을 작성하면 설정된 내용대로 Docker Image를 만들 수 있습니다.
 
 ### 해결책2: docker-compose.yml -> docker-compose up -d
+docker-compose 란, 한번에 여러개의 container 을 통합 관리 할 수 있게 하는 툴입니다.
+
 * build: db 서비스와 달리 앱서비스는 특정 이미지 대신 build 옵션을 추가합니다. context는 docker build 명령을 실행할 디렉토리 경로라고 보시면 됩니다. dockerfile 에는 '개발용' 도커 이미지를 빌드하는데 사용할 dockerfile을 지정하면 됩니다.
 * environment: 앱 서비스의 환경변수로 설정
+
+docker-compose.yml 안에 있는 서비스들은 별도로 지정하지 않으면 하나의 네트워크에 속합니다. (네트워크와 관련된 더 자세한 내용은 [Networking in Compose](https://docs.docker.com/compose/networking/)를 참고하세요.)
