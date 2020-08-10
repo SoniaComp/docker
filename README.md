@@ -1,5 +1,10 @@
 # Docker로 로컬 개발환경 한번에 설정
+시간이 없다면 이 문서만 봐도!!: 감사합니다ㅠㅜ[44bit프로젝트](https://www.44bits.io/ko/keyword/linux-container#%EB%8F%84%EC%BB%A4-%EC%BB%B4%ED%8F%AC%EC%A6%88docker-compose)
+
 기본용어 및 개념: 감사합니다ㅠㅜ[욱's노트블로그](https://opennote46.tistory.com/207)
+
+컨테이너가 VM에 비해 좋은점: 마이크로 서비스, 오케스트레이션, 빠르게 배포, 그러나 보안! 감사합니다ㅠㅜ[서강혁님의 medium](https://medium.com/@darkrasid/docker%EC%99%80-vm-d95d60e56fdd)
+
 ## 이미지와 컨테이너 사용방법(기본)
 
 ### docker-compose.yml
